@@ -1,0 +1,157 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-06-30T17:27:45.017Z",
+    "end": "2023-06-30T17:28:01.421Z",
+    "duration": 16404,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "04c1d7c6-959a-4a12-8595-06383bd827f1",
+      "title": "",
+      "fullFile": "cypress\\e2e\\3-AluraPic\\alurapic.cy.js",
+      "file": "cypress\\e2e\\3-AluraPic\\alurapic.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "ce2bf903-3244-4a0a-a1a3-5072ae31af8a",
+          "title": "Login e registro de usuarios alura pic",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "verifica mensajens validação",
+              "fullTitle": "Login e registro de usuarios alura pic verifica mensajens validação",
+              "timedOut": null,
+              "duration": 4012,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains('a', 'Register now').click();\ncy.contains('button', 'Register').click();\ncy.contains('ap-vmessage', 'Email is required!').should('be.visible');\ncy.contains('button', 'Register').click();\ncy.contains('ap-vmessage', 'Full name is required!').should('be.visible');\ncy.contains('ap-vmessage', 'User name is required!').should('be.visible');\ncy.contains('ap-vmessage', 'Password is required!').should('be.visible');",
+              "err": {},
+              "uuid": "bb0f56a5-72f7-4804-b239-8145078a773d",
+              "parentUUID": "ce2bf903-3244-4a0a-a1a3-5072ae31af8a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "verifica mensajens de email invalido",
+              "fullTitle": "Login e registro de usuarios alura pic verifica mensajens de email invalido",
+              "timedOut": null,
+              "duration": 2298,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains('a', 'Register now').click();\ncy.contains('button', 'Register').click();\ncy.get('input[formcontrolname=\"email\"]').type('Zadys');\ncy.contains('ap-vmessage', 'Invalid e-mail').should('be.visible');",
+              "err": {},
+              "uuid": "d18bf9d3-8999-4d71-b2bd-817473151c6e",
+              "parentUUID": "ce2bf903-3244-4a0a-a1a3-5072ae31af8a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "verifica mensajens de user name invalido",
+              "fullTitle": "Login e registro de usuarios alura pic verifica mensajens de user name invalido",
+              "timedOut": null,
+              "duration": 2348,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains('a', 'Register now').click();\ncy.contains('button', 'Register').click();\ncy.get('input[formcontrolname=\"userName\"]').type('Za');\ncy.contains('button', 'Register').click();\n//cy.contains('ap-vmessage', 'Minimun length is 2').should('be.visible');\ncy.contains('ap-vmessage', 'Must be lower case').should('be.visible');",
+              "err": {},
+              "uuid": "60112207-89b7-4b8a-85e1-6dba94ff0e9f",
+              "parentUUID": "ce2bf903-3244-4a0a-a1a3-5072ae31af8a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "verifica mensajens de password invalido",
+              "fullTitle": "Login e registro de usuarios alura pic verifica mensajens de password invalido",
+              "timedOut": null,
+              "duration": 1978,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains('a', 'Register now').click();\ncy.contains('button', 'Register').click();\ncy.get('input[formcontrolname=\"password\"]').type('123');\ncy.contains('button', 'Register').click();\ncy.contains('ap-vmessage', 'Mininum length is 8').should('be.visible');",
+              "err": {},
+              "uuid": "f0baff96-70cd-4589-954d-fd4f29a8634f",
+              "parentUUID": "ce2bf903-3244-4a0a-a1a3-5072ae31af8a",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "bb0f56a5-72f7-4804-b239-8145078a773d",
+            "d18bf9d3-8999-4d71-b2bd-817473151c6e",
+            "60112207-89b7-4b8a-85e1-6dba94ff0e9f",
+            "f0baff96-70cd-4589-954d-fd4f29a8634f"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 10636,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}
