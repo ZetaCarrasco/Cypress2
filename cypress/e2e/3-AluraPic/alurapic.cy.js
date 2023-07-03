@@ -40,5 +40,13 @@ describe('Login e registro de usuarios alura pic', () => {
         cy.contains('ap-vmessage', 'Mininum length is 8').should('be.visible');
 
     })
+    it.only('fazer login valido', () => {
+        cy.login('flavio', '123')
+
+    })
+    it.only('Registrar usuario', () => {
+        cy.resgister('sadica2007@gmail.com', 'Elena Lopez', 'elena', '12345678')
+
+    })
 })
 
