@@ -1,0 +1,20 @@
+[
+    {
+        "email": "juanmedina@gmail.com",
+        "fullName": "Juan Medina",
+        "userName": "juanm",
+        "password": "12345678"
+    },
+    {
+        "email": "enriqueventura1234@gmail.com",
+        "fullName": "Enrique Ventura",
+        "userName": "enriquev",
+        "password": "23456789"
+    },
+    {
+        "email": "julioperez2313@gmail.com",
+        "fullName": "Julio Perez",
+        "userName": "juliopp",
+        "password": "87654321"
+    }
+]

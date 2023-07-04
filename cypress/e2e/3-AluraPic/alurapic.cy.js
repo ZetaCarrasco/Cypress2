@@ -40,12 +40,17 @@ describe('Login e registro de usuarios alura pic', () => {
         cy.contains('ap-vmessage', 'Mininum length is 8').should('be.visible');
 
     })
-    it.only('fazer login valido', () => {
-        cy.login('flavio', '123')
+    const usuarios = require('../../fixtures/usuarios.json');
+    usuarios.forEach(usuarios => {
+        it.only('Registrar usuario', + usuarios.email, () => {
+            cy.get('input[formcontralname="email"]').type(usuarios.email);
+            cy.get('input[formcontrolname="fullName"]').type(usuarios.fullName);
+            cy.get('input[formcontrolname="userName"]').type(usuarios.userName);
+            cy.get('input[formcotrolname="password"]').type(usuarios.password);
+            cy.contains('button', 'Register').click();
 
-    })
-    it.only('Registrar usuario', () => {
-        cy.resgister('sadica2007@gmail.com', 'Elena Lopez', 'elena', '12345678')
+        })
+
 
     })
 })
