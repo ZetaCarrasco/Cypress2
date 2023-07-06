@@ -1,57 +1,24 @@
-describe('Login e registro de usuarios alura pic', () => {
+describe('Usabilidade da tela inicial', () => {
     beforeEach(() => {
         cy.visit('https://alura-fotos.herokuapp.com')
-
     })
-    it('verifica mensajens validação', () => {
-        cy.contains('a', 'Register now').click();
-        cy.contains('button', 'Register').click();
-        cy.contains('ap-vmessage', 'Email is required!').should('be.visible');
-        cy.contains('button', 'Register').click();
-        cy.contains('ap-vmessage', 'Full name is required!').should('be.visible');
+    it('verifica mensagens tela inicial', () => {
         cy.contains('ap-vmessage', 'User name is required!').should('be.visible');
         cy.contains('ap-vmessage', 'Password is required!').should('be.visible');
-    })
-
-    it('verifica mensajens de email invalido', () => {
-        cy.contains('a', 'Register now').click();
-        cy.contains('button', 'Register').click();
-        cy.get('input[formcontrolname="email"]').type('Zadys');
-        cy.contains('ap-vmessage', 'Invalid e-mail').should('be.visible');
+        cy.get('button[type="submit"]').should('be.visible');
 
     })
-
-
-    it('verifica mensajens de user name invalido', () => {
-        cy.contains('a', 'Register now').click();
-        cy.contains('button', 'Register').click();
-        cy.get('input[formcontrolname="userName"]').type('Za');
-        cy.contains('button', 'Register').click();
-        //cy.contains('ap-vmessage', 'Minimun length is 2').should('be.visible');
-        cy.contains('ap-vmessage', 'Must be lower case').should('be.visible');
-
-    })
-
-    it('verifica mensajens de password invalido', () => {
-        cy.contains('a', 'Register now').click();
-        cy.contains('button', 'Register').click();
+    it('verifica botao habilitado na tela inicial', () => {
+        cy.get('input[formcontrolname="userName"]').type('Jaqueline');
         cy.get('input[formcontrolname="password"]').type('123');
-        cy.contains('button', 'Register').click();
-        cy.contains('ap-vmessage', 'Mininum length is 8').should('be.visible');
-
+        cy.get('button[type="submit"]').should('be.visible');
     })
-    const usuarios = require('../../fixtures/usuarios.json');
-    usuarios.forEach(usuarios => {
-        it.only('Registrar usuario', + usuarios.email, () => {
-            cy.get('input[formcontralname="email"]').type(usuarios.email);
-            cy.get('input[formcontrolname="fullName"]').type(usuarios.fullName);
-            cy.get('input[formcontrolname="userName"]').type(usuarios.userName);
-            cy.get('input[formcotrolname="password"]').type(usuarios.password);
-            cy.contains('button', 'Register').click();
-
-        })
-
-
+    it('verifica nome da aplicaçao na tela inicial', () => {
+        cy.contains('a', 'ALURAPIC').should('be.visible');
     })
-})
+    it('verifica menu clicavel tela inicial', () => {
+        cy.get('.navbar-brand > .fa').click();
+        cy.get('.menu-bar > .fa').should('be.visible');
+    })
+});
 
